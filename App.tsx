@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
+import ColorBox from "./components/Colorbox";
 
 export default function App() {
   return (
@@ -9,18 +10,10 @@ export default function App() {
           Here are some boxes of different colors
         </Text>
       </View>
-      <View style={[styles.box, styles.cyan]}>
-        <Text style={styles.boxText}>cyan </Text>
-      </View>
-      <View style={[styles.box, styles.blue]}>
-        <Text style={styles.boxText}>blue </Text>
-      </View>
-      <View style={[styles.box, styles.magenta]}>
-        <Text style={styles.boxText}>magenta </Text>
-      </View>
-      <View style={[styles.box, styles.orange]}>
-        <Text style={styles.boxText}>orange </Text>
-      </View>
+      <ColorBox colorName="Cyan" hexCode="#2aa198" />
+      <ColorBox colorName="Blue" hexCode="#268bd2" />
+      <ColorBox colorName="Magenta" hexCode="#d33682" />
+      <ColorBox colorName="Orange" hexCode="#cb4b16" />
       {/* <StatusBar style="auto" /> */}
     </View>
   );
@@ -31,32 +24,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
-    // justifyContent: "center",
     padding: 16,
     paddingTop: 40,
-    // paddingHorizontal:
-  },
-  box: {
-    width: "100%",
-    textAlign: "center",
-    marginBottom: 5,
-    alignItems: "center",
-    padding: 10,
-  },
-  boxText: {
-    color: "white",
-    fontWeight: "bold",
-  },
-  cyan: {
-    backgroundColor: "#2aa198",
-  },
-  blue: {
-    backgroundColor: "#268bd2",
-  },
-  magenta: {
-    backgroundColor: "#d33682",
-  },
-  orange: {
-    backgroundColor: "#cb4b16",
   },
 });
