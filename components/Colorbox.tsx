@@ -22,7 +22,6 @@ const ColorBox = ({ colorName, hexCode }: props) => {
 
 const styles = StyleSheet.create({
   box: {
-    width: "100%",
     textAlign: "center",
     marginBottom: 5,
     alignItems: "center",
