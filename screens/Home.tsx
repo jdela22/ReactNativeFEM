@@ -50,19 +50,25 @@ const Home = ({ navigation }: any) => {
     { paletteName: "Rainbow", colors: RAINBOW },
   ];
 
+  const bold = {
+    fontWeight: "bold",
+  };
+
   return (
     <View>
       <FlatList
         keyExtractor={(item) => item.paletteName}
-        style={styles.list}
         data={COLOR_PALETTES}
         renderItem={({ item }) => (
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate("ColorPalette", { colors: item.colors })
+              navigation.navigate("ColorPalette", {
+                colors: item.colors,
+                paletteName: item.paletteName,
+              })
             }
           >
-            <PalettePreview title={item.paletteName} />
+            <PalettePreview title={item.paletteName} colors={item.colors} />
           </TouchableOpacity>
         )}
       />
@@ -71,9 +77,8 @@ const Home = ({ navigation }: any) => {
 };
 
 const styles = StyleSheet.create({
-  list: {
+  listStyle: {
     fontWeight: "bold",
-    backgroundColor: "red",
   },
 });
 

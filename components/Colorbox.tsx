@@ -11,9 +11,16 @@ const ColorBox = ({ colorName, hexCode }: props) => {
     backgroundColor: hexCode,
   };
 
+  const textStyle = {
+    color:
+      parseInt(hexCode.replace("#", ""), 16) > 0xffffff / 1.1
+        ? "black"
+        : "white",
+  };
+
   return (
     <View style={[styles.box, boxColor]}>
-      <Text style={styles.boxText}>
+      <Text style={[styles.boxText, textStyle]}>
         {colorName} : {hexCode}
       </Text>
     </View>
